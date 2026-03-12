@@ -10,4 +10,9 @@ public class Dessert extends MenuItem {
     public double calculatePrice() {
         return getPrice();
     }
+
+    @Override
+    public String toString() {
+        return "[Tráng miệng] " + super.toString();
+    }
 }

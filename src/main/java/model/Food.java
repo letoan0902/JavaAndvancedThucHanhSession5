@@ -10,4 +10,9 @@ public class Food extends MenuItem {
     public double calculatePrice() {
         return getPrice();
     }
+
+    @Override
+    public String toString() {
+        return "[Món chính] " + super.toString();
+    }
 }
