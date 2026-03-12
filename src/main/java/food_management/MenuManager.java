@@ -6,7 +6,19 @@ import java.util.List;
 
 public class MenuManager {
 
-    private List<MenuItem> manager = new ArrayList<>();
+    private List<MenuItem> manager;
+
+    public List<MenuItem> getManager() {
+        return manager;
+    }
+
+    public void setManager(List<MenuItem> manager) {
+        this.manager = manager;
+    }
+
+    public MenuManager() {
+        this.manager = new ArrayList<>();
+    }
 
     // add
     public void add(MenuItem item){
@@ -16,6 +28,18 @@ public class MenuManager {
     // display
     public void display(){
         manager.forEach(System.out::println);
+    }
+
+
+    // update
+    public void update(String idUpdate, String udName, double udPrice, boolean udStatus){
+       for (MenuItem menuItem : manager){
+           if(menuItem.getId().equals(idUpdate)){
+               menuItem.name = udName;
+               menuItem.price = udPrice;
+               menuItem.status = udStatus;
+           }
+       }
     }
 
     // find by name
@@ -35,6 +59,16 @@ public class MenuManager {
     // delete by id
     public void deleteById(String id){
         manager.removeIf(m -> m.getId().equalsIgnoreCase(id));
+    }
+
+    // getItemById
+    public MenuItem getItemById(String id){
+        for (MenuItem item : manager){
+            if(item.getId().equals(id)){
+                return item;
+            }
+        }
+        return null;
     }
 
     // sort by price

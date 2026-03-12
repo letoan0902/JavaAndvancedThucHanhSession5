@@ -2,8 +2,6 @@ package food_management;
 
 public class Drink extends MenuItem{
 
-    public
-
     public Drink() {
     }
 

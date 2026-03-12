@@ -1,10 +1,12 @@
 package food_management;
 
+import java.text.NumberFormat;
+
 public class MenuItem {
     private String id;
     public String name;
     public double price;
-    public boolean status;
+    public boolean status; // true: còn\ false: hết
     public int discount;
 
     public MenuItem() {
@@ -33,7 +35,8 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return id + " | " + name + " | " + price + " | discount: " + discount;
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        return id + " | " + name + " | " + nf.format(price) + "VND | discount: " + discount;
     }
 
 
